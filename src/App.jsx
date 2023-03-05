@@ -1,4 +1,5 @@
 import React from "react"
+import HeaderComponent from "./Components/Header"
 import MainComponent from "./Components/Main"
 import GetApi from "./Services/API/MovieAPI"
 import ContextProvider from "./Services/Context/context"
@@ -8,6 +9,8 @@ export default function App (){
         <ContextProvider>
             <GlobalStyle />    
             <GetApi />
+            <HeaderComponent />
+            <MainComponent />
         </ContextProvider>
     )
 }
