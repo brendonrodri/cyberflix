@@ -3,7 +3,7 @@ import { Context } from "../../Services/Context/context"
 import * as S from "./style"
 export default function SlideComponent (){
     const {apidata} = useContext(Context)
-    let dataComponent =  apidata.slice(1,2)
+    let dataComponent =  apidata.slice(0,1)
     return(
         <S.SlideContainer>
             <S.SlideContent>
