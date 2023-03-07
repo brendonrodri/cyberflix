@@ -5,23 +5,26 @@ export const SlideContainer = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: red;
+    background-color: transparent;
 `
 export const SlideContent = styled.article`
     width: 90%;
-    height: 90%;
-    background-color: blue;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+`
+export const MovieCard = styled.section`
+    width: 80%;
+    height: 80%;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     background-repeat: no-repeat;
-    background-size: cover;
-    div{
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        align-items: center;
-        justify-content: center ;
-    }
+    background-size: 100%;
+    
 `
 export const BoxImage = styled.div`
     width: 40%;
@@ -31,27 +34,42 @@ export const BoxImage = styled.div`
     
 `
 export const SlideImage = styled.img`
-    width: 15vw;
+    width: 20vw;
 `
 export const BoxInfos = styled.div`
     width: 50%;
+    height: 55vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 1rem;
+    background-color: rgba(55,43,95, .9);
     
 
 `
 export const SlideTitle = styled.h3`
     font-size: 2rem;
     color: rgba(250, 240, 250, 0.9);
+    margin-bottom: .7rem;
 `
 export const SlideListInfos = styled.ul`
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    height: 40%;
     list-style: none;
-    color: rgba(250, 240, 250, 0.9);
+    color: #ffff00;
 `
 export const SlideListItem = styled.li`
     font-size: 1.1rem;
+    margin: 0.6rem 0;
 `
-
-export const ButtonsBox = styled.div``
+export const SlideButton = styled.div`
+    width: 10vw;
+    text-align: center;
+    background-color:transparent;
+`
+export const ButtonsBox = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+`
