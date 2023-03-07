@@ -1,18 +1,30 @@
 import styled from "styled-components";
 export const SlideContainer = styled.section`
-    width: 80%;
-    height: 70vh;
+    width: 90%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: red;
 `
 export const SlideContent = styled.article`
-    width: 60%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
     background-color: blue;
     display: flex;
     align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    div{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+        justify-content: center ;
+    }
 `
 export const BoxImage = styled.div`
-    width: 50%;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +36,10 @@ export const SlideImage = styled.img`
 export const BoxInfos = styled.div`
     width: 50%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    
 
 `
 export const SlideTitle = styled.h3`
@@ -38,3 +53,5 @@ export const SlideListInfos = styled.ul`
 export const SlideListItem = styled.li`
     font-size: 1.1rem;
 `
+
+export const ButtonsBox = styled.div``

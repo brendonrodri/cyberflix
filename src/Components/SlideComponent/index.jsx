@@ -1,31 +1,49 @@
-import React, { useContext } from "react"
+import React, { useContext} from "react"
 import { Context } from "../../Services/Context/context"
 import * as S from "./style"
 export default function SlideComponent (){
-    const {apidata} = useContext(Context)
-    let dataComponent =  apidata.slice(0,1)
+    const {apidata, slideIndex, setSlideIndex} = useContext(Context)
+    let sliceIndexOne = slideIndex.indexOne 
+    let sliceIndexTwo = slideIndex.indexTwo
+    let dataComponent =  apidata.slice(sliceIndexOne,sliceIndexTwo)
+    const nextIndex = ()=>{
+        if(sliceIndexOne === 5 && sliceIndexTwo ===6 ){
+            return
+        }else{
+            setSlideIndex({indexOne: slideIndex.indexOne + 1, indexTwo: slideIndex.indexTwo + 1})
+        }
+    }
+    const prevIndex = ()=>{
+        if(sliceIndexOne === 0 && sliceIndexTwo === 1 ){
+            return
+        }else{
+            setSlideIndex({indexOne: slideIndex.indexOne - 1, indexTwo: slideIndex.indexTwo - 1})
+        }
+    }
     return(
         <S.SlideContainer>
-            <S.SlideContent>
                 {dataComponent.map((item)=>(
-                    <>  
-                        <S.BoxImage>
-                            <S.SlideImage src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`} alt={item.title} />
-                        </S.BoxImage>
-                        <S.BoxInfos>
-                            <S.SlideTitle>{item.title}</S.SlideTitle>
-                            <S.SlideListInfos>
-                                <S.SlideListItem>Idioma original: {item.original_language}</S.SlideListItem>
-                                <S.SlideListItem>Ano: {item.release_date}</S.SlideListItem>
-                                <S.SlideListItem>Popularidade: {item.popularity}</S.SlideListItem>
-                                <S.SlideListItem>Nota: {item.vote_average}</S.SlideListItem>
-                                <S.SlideListItem></S.SlideListItem>
-                            </S.SlideListInfos>
-                        </S.BoxInfos>
-                    </>
+                    <S.SlideContent style={{backgroundImage: `url(https://image.tmdb.org/t/p/w500/${item.backdrop_path})`}}>  
+                        <div>
+                            <S.BoxImage>
+                                <S.SlideImage src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt={item.title}/>
+                            </S.BoxImage>
+                            <S.BoxInfos>
+                                <S.SlideTitle>{item.title}</S.SlideTitle>
+                                <S.SlideListInfos>
+                                    <S.SlideListItem>Idioma original: {item.original_language}</S.SlideListItem>
+                                    <S.SlideListItem>Ano: {item.release_date}</S.SlideListItem>
+                                    <S.SlideListItem>Popularidade: {item.popularity}</S.SlideListItem>
+                                    <S.SlideListItem>Nota: {item.vote_average}</S.SlideListItem>
+                                </S.SlideListInfos>
+                            </S.BoxInfos>
+                        </div>
+                        <S.ButtonsBox>
+                            <button onClick={()=>nextIndex()}>next</button>
+                            <button onClick={()=> prevIndex()}>prev</button>
+                        </S.ButtonsBox>
+                    </S.SlideContent>
                 ))}
-               
-            </S.SlideContent>
         </S.SlideContainer>
     )
 }
