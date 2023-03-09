@@ -20,9 +20,15 @@ export const FilmsBox = styled.div`
     justify-content: center;
     margin: 1rem;
     align-items: center;
+    
 `
 export const FilmImg = styled.img`
     width: 70%;
+    cursor: pointer;
+    transition: 500ms;
+    :hover{
+        transform: translate(1.1);
+    }
 `
 export const FilmName = styled.h3`
 font-size: 1.1rem;
