@@ -4,7 +4,7 @@ import Context from "../../Services/Context/context"
 const ComponentData = ()=>{
     const [state, setState] = useState([])
     const {apidata} = useContext(Context)
-    let data = apidata.slice(0,5)
+    let data = apidata
     setState(data)
     console.log(state)
     return

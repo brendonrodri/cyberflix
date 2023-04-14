@@ -1,4 +1,4 @@
-// refatorar o componente e transformar em um componente com props
+/* // refatorar o componente e transformar em um componente com props
 // procurar uma lógica para passar os dados da api via props 
 
 import React, { useContext, useState } from "react"
@@ -33,4 +33,38 @@ export function FilmsComponet (){
         
         
     )
+}
+
+
+ */
+
+
+import React, { useContext, useState } from "react"
+import * as S from "./style"
+import { Context } from "../../Services/Context/context"
+
+
+export default function FilmesComponent(){
+    const [modal, setModal] = useState(false)
+    const {apidata} = useContext(Context)
+    return(
+        <>
+       
+<S.ComponentTitle>
+                <h1>Populares</h1>
+            </S.ComponentTitle>
+            <S.FilmsContainer>
+                <S.FilmsSection>
+                    {apidata.map((item)=>(
+                        <S.FilmsBox>
+                            <p>{item.title}</p>
+                            <S.FilmImg src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt={item.title} 
+                            />
+                        </S.FilmsBox>
+                    ))}
+                </S.FilmsSection>
+            </S.FilmsContainer>
+            </>
+    )
+    
 }

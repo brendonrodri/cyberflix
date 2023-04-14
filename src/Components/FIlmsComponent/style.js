@@ -13,7 +13,6 @@ export const FilmsContainterTitle= styled.h2`
 
 `
 export const FilmsBox = styled.div`
-    width: 21vw;
     height: 65vh;
     display: flex;
     flex-direction: column;

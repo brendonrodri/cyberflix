@@ -1,6 +1,6 @@
 import React from "react"
 import * as S from "./style"
-import { FilmsComponet } from "../FIlmsComponent"
+import FilmesComponent from "../FIlmsComponent"
 import HeaderComponent from "../Header"
 import BannerComponent from "../BannerComponent"
 export default function MainComponent (){
@@ -8,7 +8,7 @@ export default function MainComponent (){
         <S.Main id="main">
             <HeaderComponent />
             <BannerComponent />
-            <FilmsComponet />
+            <FilmesComponent />
         </S.Main>
     )
 }
