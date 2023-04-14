@@ -38,10 +38,10 @@ export function FilmsComponet (){
 
  */
 
-
+/* 
 import React, { useContext, useState } from "react"
 import * as S from "./style"
-import { Context } from "../../Services/Context/context"
+
 
 
 export default function FilmesComponent(){
@@ -67,4 +67,70 @@ export default function FilmesComponent(){
             </>
     )
     
+} */
+
+import React, {useContext} from "react";
+import Slider from "react-slick";
+import { Context } from "../../Services/Context/context"
+
+export default function FilmesComponent () {
+    const {apidata} = useContext(Context)
+    const settings = {
+        className: "center",
+        centerMode: true,
+        infinite: true,
+        centerPadding: "10rem",
+        slidesToShow: 5,
+        speed: 700
+      };
+  
+    return (
+      <div>
+        <h2> Responsive </h2>
+        <Slider {...settings}>
+          {apidata.map((data)=>(
+            <div>
+                <img style={{width: '15vw'}} src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`} alt={data.title}  />
+            </div>
+          ))}
+        </Slider>
+      </div>
+    );
 }
+/* export default class FilmesComponent extends Component {
+    render() {
+      const settings = {
+        className: "center",
+        centerMode: true,
+        infinite: true,
+        centerPadding: "60px",
+        slidesToShow: 3,
+        speed: 500
+      };
+      return (
+        <div>
+          <h2>Center Mode</h2>
+          <Slider {...settings}>
+            <div>
+              <h3>1</h3>
+            </div>
+            <div>
+              <h3>2</h3>
+            </div>
+            <div>
+              <h3>3</h3>
+            </div>
+            <div>
+              <h3>4</h3>
+            </div>
+            <div>
+              <h3>5</h3>
+            </div>
+            <div>
+              <h3>6</h3>
+            </div>
+          </Slider>
+        </div>
+      );
+    }
+  } */
