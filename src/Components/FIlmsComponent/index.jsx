@@ -79,22 +79,23 @@ export default function FilmesComponent () {
         className: "center",
         centerMode: true,
         infinite: true,
-        centerPadding: "10rem",
+        centerPadding: "2rem",
         slidesToShow: 5,
-        speed: 700
+        speed: 500,
+        swipeToSlide: true
       };
   
     return (
-      <div>
-        <h2> Responsive </h2>
-        <Slider {...settings}>
+      <>
+        <h2 style={{color: '#f3f3fe', marginLeft: '3rem', marginBottom: '2rem'}}> Filmes Populares </h2>
+        <Slider {...settings} style={{width: '97%', margin: '0 auto', cursor: 'grab'}}>
           {apidata.map((data)=>(
             <div>
                 <img style={{width: '15vw'}} src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`} alt={data.title}  />
             </div>
           ))}
         </Slider>
-      </div>
+      </>
     );
 }
 /* export default class FilmesComponent extends Component {
