@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+/* import React, { useState } from "react"
 import * as S from "./style"
 import { IconContext } from "react-icons"
 import {FaFilm} from "react-icons/fa"
@@ -28,7 +28,7 @@ export default function HelloPageComponent (){
                 </a>
                 </S.HelloMainSection>
             </S.HelloMain>
-            {state && <MainComponent />}
+            {state && }
         </>
     )
-}
+} */
