@@ -42,7 +42,8 @@ export default function FilmesComponent () {
                   style={{width: '16vw'}} 
                   src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`} 
                   alt={data.title}
-                  onClick={()=> {
+                  
+                  onDoubleClick={()=> {
                     setModalActive(true)
                    setModalItem({title: data.title, img: `https://image.tmdb.org/t/p/w200/${data.poster_path}`})
                   }}
