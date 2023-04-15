@@ -6,13 +6,16 @@ export default function ContextProvider({children}) {
         indexOne: 0,
         indexTwo: 1
     })
-    const [modalIndex, setModalIndex] = useState({
-        indexOne: 0,
-        indexTwo: 1
-    })
-    console.log(apidata)
+    const [modalActive, setModalActive] = useState(false)
     return(
-        <Context.Provider value={{apidata, setApiData, slideIndex, setSlideIndex,modalIndex, setModalIndex}}>
+        <Context.Provider value={{
+            apidata, 
+            setApiData, 
+            slideIndex, 
+            setSlideIndex, 
+            modalActive, 
+            setModalActive
+            }}>
             {children}
         </Context.Provider>
     )
