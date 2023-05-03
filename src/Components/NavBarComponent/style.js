@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom"
 export const NavBar = styled.nav`
     width: 65%;
     height: 15vh;

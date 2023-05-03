@@ -1,13 +1,12 @@
 import React from "react"
 import * as S from "./style"
-import FilmesComponent from "../FIlmsComponent"
-import HeaderComponent from "../Header"
+import CarouselComponent from "../FIlmsComponent"
 import BannerComponent from "../BannerComponent"
 export default function MainComponent (){
     return(
         <S.Main id="main">
             <BannerComponent />
-            <FilmesComponent />
+            <CarouselComponent />
         </S.Main>
     )
 }

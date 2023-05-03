@@ -2,7 +2,7 @@ import React from "react"
 import { Routes, Route, BrowserRouter } from "react-router-dom"
 import HeaderComponent from "./Components/Header"
 import MainComponent from "./Components/Main"
-import PopularFilmsPage from "./Pages/PopularFilmsPage"
+import FilmsPagesComponent from "./Components/FilmsPagesComponent"
 import GetApi from "./Services/API/MovieAPI"
 import GlobalStyle from "./Services/GlobalStyle/style"
 export default function App() {
@@ -14,7 +14,7 @@ export default function App() {
                 <HeaderComponent />
                 <Routes>
                     <Route path="/" element={<MainComponent />} />
-                    <Route path="/Populares" element={<PopularFilmsPage/>}/>
+                    <Route path="/Populares" element={<FilmsPagesComponent/>}/>
                 </Routes>
             </BrowserRouter>
         </>
