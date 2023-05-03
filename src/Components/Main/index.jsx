@@ -6,7 +6,6 @@ import BannerComponent from "../BannerComponent"
 export default function MainComponent (){
     return(
         <S.Main id="main">
-            <HeaderComponent />
             <BannerComponent />
             <FilmesComponent />
         </S.Main>

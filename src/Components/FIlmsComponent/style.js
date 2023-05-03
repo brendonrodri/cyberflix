@@ -22,7 +22,7 @@ export const FilmsBox = styled.div`
     
 `
 export const FilmImg = styled.img`
-    width: 10vw;
+    width: 16vw;
     cursor: pointer;
 `
 export const FilmName = styled.h3`
@@ -44,7 +44,10 @@ export const FilmsSection = styled.section`
     display: flex;
 `
 export const ComponentTitle = styled.h2`
-
+        font-size:3rem;
+          color: #f3f3fe;
+          margin-left: 3rem;
+          margin-bottom: 2rem;
 `
 export const  TitleContainer = styled.section`
 

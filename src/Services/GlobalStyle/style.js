@@ -9,7 +9,10 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
         scrollbar-width: 1px;
     }
-    body::-webkit-scrollbar {
+    body{
+        background-color: rgb(20,23,35);
+    }
+    /* body::-webkit-scrollbar {
         width: 12px;
     }
     body::-webkit-scrollbar-track {
@@ -19,6 +22,6 @@ const GlobalStyle = createGlobalStyle`
         background-color: rgba(55,43,95, .9);  
         border-radius: 25px; 
         border: 3px solid rgb(20,23,35);; 
-    }
+    } */
 `
 export default GlobalStyle;
