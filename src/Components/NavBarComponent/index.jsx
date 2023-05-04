@@ -8,7 +8,7 @@ export default function NavBarComponent() {
                 <S.NavList>
                     <S.NavListItem><Link to="/">Início</Link></S.NavListItem>
                     <S.NavListItem><Link to="/Populares"> Populares </Link> </S.NavListItem>
-                    <S.NavListItem>Recentes</S.NavListItem>
+                    <S.NavListItem><Link to="/Series">Séries</Link></S.NavListItem>
                     <S.NavListItem>Gêneros </S.NavListItem>
                 </S.NavList>
             </S.NavBar>
