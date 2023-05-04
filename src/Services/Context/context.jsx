@@ -14,10 +14,13 @@ export default function ContextProvider({children}) {
         popularity: undefined,
         lang: undefined,
         year: undefined,
+        modalIsOn: undefined
     
       })
-    const [modalActive, setModalActive] = useState(false)
-    console.log(apiSeriesData)
+    const [modalActive, setModalActive] = useState({
+        modalFilms: undefined,
+        modalSeries: undefined,
+    })
     return(
         <Context.Provider value={{
             apidata, 

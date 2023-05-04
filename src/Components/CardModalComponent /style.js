@@ -1,9 +1,9 @@
 import styled from "styled-components"
 export const  ModalContainer= styled.section`
-    width: 90%;
-    height: 85vh;
-    margin: 3% auto;
-    background-color: #312759;
+    width: 95%;
+    height: 70vh;
+    margin: 1% auto;
+    background-color: rgba(250, 250, 250, .1);
     transition: 2000ms;
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@ export const FilmDesc = styled.p`
 
 
 export const ModalImg = styled.img`
-    width: 25%;
+    width: 20vw;
 `
 
 export const FilmInfos = styled.div`
@@ -70,6 +70,11 @@ export const ModalButton = styled.button`
     border-radius: 1px;
     border: none;
     background-color: #fefefe;
+
+    :hover{
+        background-color: #e1e010;
+        border-radius: 7px;
+    }
    
     
 `

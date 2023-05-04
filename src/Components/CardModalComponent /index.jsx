@@ -8,10 +8,10 @@ import { Context } from "../../Services/Context/context"
 import * as S from "./style"
 
 export default function CardModalComponent (title, desc, img, pop, year, lang){
-    const {modalActive, setModalActive} = useContext(Context)
+    const {setModalActive} = useContext(Context)
     return(
-        <S.ModalContainer>
-                <S.CloseButton onClick={()=> setModalActive(!modalActive)}>X</S.CloseButton>
+        <S.ModalContainer id="modal">
+                <S.CloseButton onClick={()=> setModalActive({modalFilms: false, modalSeries: false})}>X</S.CloseButton>
             <S.FilmBox>
                 <S.ModalImg src={img} alt={title} />
             <S.FilmInfos>

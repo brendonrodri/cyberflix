@@ -1,6 +1,6 @@
 import React from "react"
 import * as S from "./style"
-import CarouselComponent from "../FIlmsComponent"
+import CarouselComponent from "../ContentSlide/index"
 import BannerComponent from "../BannerComponent"
 export default function MainComponent (){
     return(

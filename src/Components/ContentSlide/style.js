@@ -3,10 +3,10 @@ import styled from "styled-components"
 export const FilmsContainer = styled.section`
     width: 100%;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    transition: 600ms;
-    overflow-x: scroll;
+    flex-direction: column;
+    margin: 2rem 0;
+    padding: 1rem 0;
+    background-color: rgba(25, 23, 65, 0.9);
 `
 export const FilmsContainterTitle= styled.h2`
     font-size: 1rem;
@@ -44,10 +44,10 @@ export const FilmsSection = styled.section`
     display: flex;
 `
 export const ComponentTitle = styled.h2`
-        font-size:3rem;
-          color: #f3f3fe;
-          margin-left: 3rem;
-          margin-bottom: 2rem;
+        font-size:2rem;
+        color: #f3f3fe;
+        margin-left: 2rem;
+        margin-bottom: 1rem;
 `
 export const  TitleContainer = styled.section`
 
