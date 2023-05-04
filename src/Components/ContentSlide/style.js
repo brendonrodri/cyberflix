@@ -1,10 +1,10 @@
 import styled from "styled-components"
 
 export const FilmsContainer = styled.section`
-    width: 100%;
+    width: 97%;
     display: flex;
     flex-direction: column;
-    margin: 2rem 0;
+    margin: 2rem auto;
     padding: 1rem 0;
     background-color: rgba(25, 23, 65, 0.9);
 `

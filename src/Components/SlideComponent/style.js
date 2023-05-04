@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const SlideContainer = styled.section`
-    width: 90%;
+    width: 97%;
     height: 80vh;
     display: flex;
     align-items: center;
@@ -8,7 +8,7 @@ export const SlideContainer = styled.section`
     background-color: transparent;
 `
 export const SlideContent = styled.article`
-    width: 90%;
+    width: 100%;
     height: 100%;
     background-color: transparent;
     display: flex;
@@ -17,8 +17,8 @@ export const SlideContent = styled.article`
     justify-content: center;
 `
 export const MovieCard = styled.section`
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -38,7 +38,7 @@ export const SlideImage = styled.img`
 `
 export const BoxInfos = styled.div`
     width: 50%;
-    height: 55vh;
+    height: 80%;
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -50,6 +50,12 @@ export const SlideTitle = styled.h3`
     font-size: 2rem;
     color: rgba(250, 240, 250, 0.9);
     margin-bottom: .7rem;
+`
+export const SlideOverView = styled.p`
+    font-size: 1.1rem;
+    text-align: justify;
+    color: rgba(250, 240, 250, 0.9);
+    margin: .7rem 0;
 `
 export const SlideListInfos = styled.ul`
     display: flex;

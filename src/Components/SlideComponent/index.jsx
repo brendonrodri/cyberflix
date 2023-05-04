@@ -1,33 +1,35 @@
 import React, { useContext} from "react"
-import {GrNext, GrPrevious} from "react-icons/gr"
-import { IconContext } from "react-icons"
+/* import {GrNext, GrPrevious} from "react-icons/gr"
+import { IconContext } from "react-icons" */
 import { Context } from "../../Services/Context/context"
 import * as S from "./style"
 export default function SlideComponent (){
-    const {apidata, slideIndex, setSlideIndex} = useContext(Context)
+    const {apidata, slideIndex, /* setSlideIndex */} = useContext(Context)
     let sliceIndexOne = slideIndex.indexOne 
     let sliceIndexTwo = slideIndex.indexTwo
-    let dataComponent =  apidata.slice(sliceIndexOne,sliceIndexTwo)
-    const nextIndex = ()=>{
+    let dataComponent =  apidata.slice(7,8)
+    /* const nextIndex = ()=>{
         if(sliceIndexOne === 5 && sliceIndexTwo ===6 ){
             return
         }else{
-            setSlideIndex({
-                indexOne: slideIndex.indexOne + 1,
-                indexTwo: slideIndex.indexTwo + 1
-            })
+            setInterval(()=>{
+                setSlideIndex({
+                    indexOne: slideIndex.indexOne + 1,
+                    indexTwo: slideIndex.indexTwo + 1
+                })
+            },3000)       
         }
-    }
-    const prevIndex = ()=>{
-        if(sliceIndexOne === 0 && sliceIndexTwo === 1 ){
-            return
-        }else{
-            setSlideIndex({
-                indexOne: slideIndex.indexOne - 1,
-                indexTwo: slideIndex.indexTwo - 1
-            })
-        }
-    }
+    } */
+   /*  const prevIndex = ()=>{
+            if(sliceIndexOne === 0 && sliceIndexTwo === 1 ){
+                return
+            }else{
+                setSlideIndex({
+                    indexOne: slideIndex.indexOne - 1,
+                    indexTwo: slideIndex.indexTwo - 1
+                })
+            } 
+    } */
     return(
         <S.SlideContainer>
                 {dataComponent.map((item)=>(
@@ -36,6 +38,7 @@ export default function SlideComponent (){
                                 <S.SlideImage src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt={item.title}/>
                                 <S.BoxInfos>
                                     <S.SlideTitle>{item.title}</S.SlideTitle>
+                                    <S.SlideOverView>{item.overview}</S.SlideOverView>
                                     <S.SlideListInfos>
                                         <S.SlideListItem>Nota: {item.vote_average}</S.SlideListItem>
                                         <S.SlideListItem>Popularidade: {item.popularity}</S.SlideListItem>
@@ -44,7 +47,7 @@ export default function SlideComponent (){
                                     </S.SlideListInfos>
                                 </S.BoxInfos>
                             </S.MovieCard>
-                        <S.ButtonsBox>
+{/*                         <S.ButtonsBox>
                             <IconContext.Provider value={{color: 'white', size: '3rem'}}>
                             <S.SlideButton onClick={()=> prevIndex()}>
                                 <GrPrevious />
@@ -53,7 +56,7 @@ export default function SlideComponent (){
                                 <GrNext />
                             </S.SlideButton>  
                             </IconContext.Provider>  
-                        </S.ButtonsBox>
+                        </S.ButtonsBox> */}
                     </S.SlideContent>
                 ))}
         </S.SlideContainer>
