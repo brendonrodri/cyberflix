@@ -7,8 +7,8 @@ export default function FilmsPagesComponent ({titlePage, filmName, filmImage, fi
         <S.PageContainer>
             {apidata.map((item)=>(
                 <S.CardBox>
-                    <S.CardTitle>{item.title}</S.CardTitle>
                     <S.CardImg src={`https://image.tmdb.org/t/p/w200/${item.poster_path}`} alt={item.title} />
+                    <S.CardTitle>{item.title}</S.CardTitle>
                 </S.CardBox>
             ))}
         </S.PageContainer>

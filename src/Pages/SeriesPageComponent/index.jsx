@@ -7,8 +7,8 @@ export default  function SeriesComponent(){
         <S.PageContainer>
             {apiSeriesData.map((data)=>(
                 <S.CardBox>
-                    <S.CardTitle>{data.name}</S.CardTitle>
                     <S.CardImg src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`} />
+                    <S.CardTitle>{data.name}</S.CardTitle>
                 </S.CardBox>
             ))}
         </S.PageContainer>
