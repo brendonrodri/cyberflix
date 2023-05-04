@@ -4,9 +4,9 @@ import { IconContext } from "react-icons" */
 import { Context } from "../../Services/Context/context"
 import * as S from "./style"
 export default function SlideComponent (){
-    const {apidata, slideIndex, /* setSlideIndex */} = useContext(Context)
-    let sliceIndexOne = slideIndex.indexOne 
-    let sliceIndexTwo = slideIndex.indexTwo
+    const {apidata, /* slideIndex, setSlideIndex */} = useContext(Context)
+   /*  let sliceIndexOne = slideIndex.indexOne 
+    let sliceIndexTwo = slideIndex.indexTwo */
     let dataComponent =  apidata.slice(7,8)
     /* const nextIndex = ()=>{
         if(sliceIndexOne === 5 && sliceIndexTwo ===6 ){
