@@ -22,6 +22,9 @@ export default function ContextProvider({children}) {
         modalSeries: undefined,
         isOn: true
     })
+    const [ input,
+        setInput] = useState()
+    const [dataFiltered, setDatFiltered] = useState()    
     return(
         <Context.Provider value={{
             apidata, 
@@ -33,7 +36,10 @@ export default function ContextProvider({children}) {
             modalActive, 
             setModalActive,
             modalItem,
-            setModalItem
+            setModalItem,
+            input,
+            setInput,
+            dataFiltered, setDatFiltered
             }}>
             {children}
         </Context.Provider>

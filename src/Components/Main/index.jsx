@@ -8,12 +8,10 @@ export default function MainComponent (){
     const { modalActive} = useContext(Context)
     return(
         <S.Main id="main">
-            {modalActive.modalFilms || modalActive.modalSeries === true ? 
-            <>
-                <ModalComponent />
-            </> : ''}
+            {modalActive.modalFilms || modalActive.modalSeries === true ? <ModalComponent /> : ''}
             {modalActive.isOn && 
-                <>  <BannerComponent />
+                <>  
+                    <BannerComponent />
                     <CarouselComponent />    
                 </>
             }

@@ -1,5 +1,6 @@
 import React from "react"
 import { Routes, Route, BrowserRouter } from "react-router-dom"
+import { FilterComponent } from "./Components/FilterComponent"
 import HeaderComponent from "./Components/Header"
 import MainComponent from "./Components/Main"
 import FilmsPagesComponent from "./Pages/FilmsPagesComponent/index"
@@ -14,6 +15,7 @@ export default function App() {
             <GetApi />
             <BrowserRouter>
                 <HeaderComponent />
+                <FilterComponent />
                 <Routes>
                     <Route path="/" element={<MainComponent />} />
                     <Route path="/Populares" element={<FilmsPagesComponent/>}/>

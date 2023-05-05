@@ -4,6 +4,7 @@ import { Context } from "../../Services/Context/context"
 import * as S from "./style"
 export default function FilmsComponent() {
   const { apidata, setModalItem, setModalActive } = useContext(Context)
+  console.log(apidata)
   const settings = {
     className: "center",
     centerMode: false,
@@ -15,9 +16,7 @@ export default function FilmsComponent() {
   };
   return (
     <S.FilmsContainer>
-      {/* {modalActive.modalFilms === true ? '' : */}
       <S.ComponentTitle > Filmes Populares </S.ComponentTitle>
-      
         <Slider {...settings} style={{ width: '95%', margin: '0 auto', cursor: 'grab' }}>
           {apidata.map((data) => (
             <div key={data.id}>

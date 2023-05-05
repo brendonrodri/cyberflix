@@ -8,7 +8,7 @@ export const  ModalContainer= styled.section`
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-    animation: scale-in-bottom 1000ms ease-in-out both;
+    animation: scale-in-bottom 500ms ease-in-out both;
 @keyframes scale-in-bottom {
   0% {
     transform: scale(0);
@@ -21,7 +21,6 @@ export const  ModalContainer= styled.section`
    
   }
 }
-
 `
 export const FilmBox = styled.section`
     display: flex;
@@ -33,17 +32,14 @@ export const FilmModalTitle = styled.h2`
     color: #fefefe;
     padding: 0.5rem;
 `
-
 export const FilmDesc = styled.p`
     font-size: 1.2rem;
     color: #fefefe;
-    padding: 0.5rem;`
-
-
+    padding: 0.5rem;
+`
 export const ModalImg = styled.img`
     width: 25%;
 `
-
 export const FilmInfos = styled.div`
     display: flex;
     flex-direction: column;
@@ -68,7 +64,6 @@ export const CloseButton = styled.button`
     position: relative;
     top: 0px;
     left: 10px;;
-    
 `
 export const ButtonContainer = styled.div`
     width: 100%;
@@ -83,12 +78,5 @@ export const ModalButton = styled.button`
     border-radius: 1px;
     border: none;
     background-color: #fefefe;
-
-    :hover{
-        background-color: #e1e010;
-        border-radius: 7px;
-    }
-   
-    
 `
 
