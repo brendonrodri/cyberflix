@@ -1,6 +1,6 @@
 import  React ,{useContext} from "react"
 import { Context } from "../../Services/Context/context"
-
+import * as S from "./styles"
 export const FilterComponent = () =>{
      const {dataFiltered, input} = useContext(Context)
      const FilterApi = () =>{
@@ -8,13 +8,14 @@ export const FilterComponent = () =>{
             return
         }else{
            return(
-                <h2>
+                <S.FilterContainer>
                     {dataFiltered.map((item) =>(
-                <>
-                    {item.title}
-                </>
+                <S.CardBox>
+                   <S.CardTitle>{item.title}</S.CardTitle>
+                   <S.CardImg src={`https://image.tmdb.org/t/p/w200/${item.poster_path}`} alt={item.title} />
+                </S.CardBox>
             ))}
-           </h2>
+           </S.FilterContainer>
            )
         }
      }
