@@ -7,6 +7,7 @@ export const FilmsContainer = styled.section`
     margin: 2rem auto;
     padding: 1rem 0;
     background-color: rgba(25, 23, 65, 0.9);
+    scroll-behavior: smooth;
 `
 export const FilmsContainterTitle= styled.h2`
     font-size: 1rem;

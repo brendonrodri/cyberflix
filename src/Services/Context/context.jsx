@@ -14,12 +14,13 @@ export default function ContextProvider({children}) {
         popularity: undefined,
         lang: undefined,
         year: undefined,
-        modalIsOn: undefined
+        component: undefined
     
       })
     const [modalActive, setModalActive] = useState({
         modalFilms: undefined,
         modalSeries: undefined,
+        isOn: true
     })
     return(
         <Context.Provider value={{

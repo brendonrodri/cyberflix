@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import Slider from "react-slick";
 import { Context } from "../../Services/Context/context"
-import CardModalComponent from "../CardModalComponent "
 import * as S from "./style"
 export default function SeriesComponent() {
-  const { apiSeriesData, modalItem, setModalItem,modalActive, setModalActive } = useContext(Context)
+  const { apiSeriesData, setModalItem, setModalActive } = useContext(Context)
   const settings = {
     className: "center",
     centerMode: false,
@@ -14,26 +13,13 @@ export default function SeriesComponent() {
     speed: 500,
     swipeToSlide: true
   };
- 
   return (
     <S.FilmsContainer>
-       {modalActive.modalSeries === true && 
-          CardModalComponent(
-            modalItem.title, 
-            modalItem.description, 
-            modalItem.img, 
-            modalItem.popularity, 
-            modalItem.lang, 
-            modalItem.year,
-            modalItem.modalIsOn
-          )
-        }
-      {modalActive.modalSeries === true ? '':
-      <S.ComponentTitle > Séries Populares </S.ComponentTitle> }
+      
+      <S.ComponentTitle > Séries Populares </S.ComponentTitle> 
       <Slider {...settings} style={{ width: '95%', margin: '0 auto', cursor: 'grab' }}>
         {apiSeriesData.map((data) => (
-          <div key={data.id}>
-            <a href="#modal">
+          <div key={data.id}> 
             <S.FilmImg
               src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`}
               alt={data.title}
@@ -43,17 +29,16 @@ export default function SeriesComponent() {
                   modalSeries: true
                 })
                 setModalItem({
-                  title: data.title,
+                  title: data.name,
                   description: data.overview,
                   img:`https://image.tmdb.org/t/p/w200/${data.poster_path}`,
                   popularity: data.popularity,
                   lang: data.original_language,
                   year: data.release_date,
                 })
+                window.location.href='#modal';
               }}
             />
-            </a>
-           
           </div>
         ))}
       </Slider>

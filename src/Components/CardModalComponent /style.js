@@ -1,14 +1,27 @@
 import styled from "styled-components"
 export const  ModalContainer= styled.section`
     width: 95%;
-    height: 70vh;
-    margin: 1% auto;
+    margin: 0 auto;
     background-color: rgba(250, 250, 250, .1);
     transition: 2000ms;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
+    animation: scale-in-bottom 1000ms ease-in-out both;
+@keyframes scale-in-bottom {
+  0% {
+    transform: scale(0);
+    transform-origin: 50% 100%;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: 50% 100%;
+   
+  }
+}
+
 `
 export const FilmBox = styled.section`
     display: flex;
@@ -28,7 +41,7 @@ export const FilmDesc = styled.p`
 
 
 export const ModalImg = styled.img`
-    width: 20vw;
+    width: 25%;
 `
 
 export const FilmInfos = styled.div`
@@ -78,3 +91,4 @@ export const ModalButton = styled.button`
    
     
 `
+
