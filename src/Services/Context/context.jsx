@@ -8,6 +8,7 @@ export default function ContextProvider({children}) {
         indexTwo: 1
     })
     const [modalItem, setModalItem] = useState({
+        id: undefined,
         title: undefined,
         description: undefined,
         img: undefined,
@@ -24,7 +25,8 @@ export default function ContextProvider({children}) {
     })
     const [ input,
         setInput] = useState()
-    const [dataFiltered, setDatFiltered] = useState()    
+    const [dataFiltered, setDatFiltered] = useState() 
+    const [favList, setFavList] = useState([])   
     return(
         <Context.Provider value={{
             apidata, 
@@ -39,7 +41,10 @@ export default function ContextProvider({children}) {
             setModalItem,
             input,
             setInput,
-            dataFiltered, setDatFiltered
+            dataFiltered, 
+            setDatFiltered,
+            favList, 
+            setFavList
             }}>
             {children}
         </Context.Provider>

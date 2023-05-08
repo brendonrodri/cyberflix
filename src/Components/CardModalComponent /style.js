@@ -1,6 +1,6 @@
 import styled from "styled-components"
 export const  ModalContainer= styled.section`
-    width: 95%;
+    width: 97%;
     margin: 0 auto;
     background-color: rgba(250, 250, 250, .1);
     transition: 2000ms;
@@ -18,7 +18,6 @@ export const  ModalContainer= styled.section`
   100% {
     transform: scale(1);
     transform-origin: 50% 100%;
-   
   }
 }
 `
@@ -45,7 +44,6 @@ export const FilmInfos = styled.div`
     flex-direction: column;
     width: 40%;
 `
-
 export const FilmList = styled.ul`
     font-size: 1rem;
     color: #fefefe;
@@ -57,13 +55,15 @@ export const FilmList = styled.ul`
 export const CloseButton = styled.button`
     background-color: transparent;
     border: none;
+    height: 10vh;
     width: 5vw;
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: #fefefe;
+    color: #f2f2f2;
     position: relative;
-    top: 0px;
-    left: 10px;;
+    left: 2%;
+    cursor: pointer;
+    :hover{
+    transform: translate(1.1);
+    }
 `
 export const ButtonContainer = styled.div`
     width: 100%;
@@ -79,4 +79,3 @@ export const ModalButton = styled.button`
     border: none;
     background-color: #fefefe;
 `
-

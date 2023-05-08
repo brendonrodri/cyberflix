@@ -1,18 +1,31 @@
-import React from "react"
+import React, {useContext} from "react"
 import "./buttonStyle.css"
-import { MdPlaylistAdd } from "react-icons/md"
+import { MdPlaylistAdd, MdClose } from "react-icons/md"
 import { BiLike } from "react-icons/bi"
 import { IconContext } from "react-icons"
-import { useContext } from "react"
 import { Context } from "../../Services/Context/context"
 import * as S from "./style"
 import FilmsComponent from "../ContentSlide/filmes"
 import SeriesComponent from "../ContentSlide/series"
-export function CardModalComponent(title, desc, img, pop, year, lang) {
-    const { setModalActive, modalActive } = useContext(Context)
+export function CardModalComponent(id, title, desc, img, pop, year, lang) {
+    const { apidata, setModalActive, modalActive, favList, setFavList } = useContext(Context)
+
+    const addToFavList = () =>{
+        let filtered = apidata.filter((item)=>{
+            return item.id === id
+        })
+        
+        setFavList(favList.concat(filtered))
+        console.log(favList)
+    }
+
     return (
         <S.ModalContainer id="modal">
-            <S.CloseButton onClick={() => setModalActive({ modalFilms: false, modalSeries: false, isOn: true })}>X</S.CloseButton>
+            <S.CloseButton onClick={() => setModalActive({ modalFilms: false, modalSeries: false, isOn: true })}>
+                <IconContext.Provider value={{size: '2.4rem'}}>
+                    <MdClose />
+                </IconContext.Provider>
+            </S.CloseButton>
             <S.FilmBox>
                 <S.ModalImg src={img} alt={title} />
                 <S.FilmInfos>
@@ -24,7 +37,7 @@ export function CardModalComponent(title, desc, img, pop, year, lang) {
                         <li>Idioma: {lang}</li>
                     </S.FilmList>
                     <S.ButtonContainer>
-                        <S.ModalButton>
+                        <S.ModalButton onClick={()=> addToFavList()}>
                             <IconContext.Provider value={{ color: '#000', size: '1.5rem', className: "buttonIcon" }}>
                                 <MdPlaylistAdd />
                                 Minha lista
@@ -50,6 +63,7 @@ export default function ModalComponent() {
         <>
             {modalActive.modalSeries === true &&
                 CardModalComponent(
+                    modalItem.id,
                     modalItem.title,
                     modalItem.description,
                     modalItem.img,
@@ -61,6 +75,7 @@ export default function ModalComponent() {
             }
             {modalActive.modalFilms === true &&
                 CardModalComponent(
+                    modalItem.id,
                     modalItem.title,
                     modalItem.description,
                     modalItem.img,

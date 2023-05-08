@@ -30,6 +30,7 @@ export default function FilmsComponent() {
                       isOn: false
                     })
                     setModalItem({
+                      id: data.id,
                       title: data.title,
                       description: data.overview,
                       img: `https://image.tmdb.org/t/p/w200/${data.poster_path}`,

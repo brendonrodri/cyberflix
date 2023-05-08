@@ -29,6 +29,7 @@ export default function SeriesComponent() {
                   modalSeries: true
                 })
                 setModalItem({
+                  id: data.id,
                   title: data.name,
                   description: data.overview,
                   img:`https://image.tmdb.org/t/p/w200/${data.poster_path}`,

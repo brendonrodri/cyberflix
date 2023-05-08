@@ -4,32 +4,9 @@ import { IconContext } from "react-icons" */
 import { Context } from "../../Services/Context/context"
 import * as S from "./style"
 export default function SlideComponent (){
-    const {apidata, /* slideIndex, setSlideIndex */} = useContext(Context)
-   /*  let sliceIndexOne = slideIndex.indexOne 
-    let sliceIndexTwo = slideIndex.indexTwo */
+    const {apidata} = useContext(Context)
     let dataComponent =  apidata.slice(7,8)
-    /* const nextIndex = ()=>{
-        if(sliceIndexOne === 5 && sliceIndexTwo ===6 ){
-            return
-        }else{
-            setInterval(()=>{
-                setSlideIndex({
-                    indexOne: slideIndex.indexOne + 1,
-                    indexTwo: slideIndex.indexTwo + 1
-                })
-            },3000)       
-        }
-    } */
-   /*  const prevIndex = ()=>{
-            if(sliceIndexOne === 0 && sliceIndexTwo === 1 ){
-                return
-            }else{
-                setSlideIndex({
-                    indexOne: slideIndex.indexOne - 1,
-                    indexTwo: slideIndex.indexTwo - 1
-                })
-            } 
-    } */
+
     return(
         <S.SlideContainer>
                 {dataComponent.map((item)=>(
@@ -47,16 +24,6 @@ export default function SlideComponent (){
                                     </S.SlideListInfos>
                                 </S.BoxInfos>
                             </S.MovieCard>
-{/*                         <S.ButtonsBox>
-                            <IconContext.Provider value={{color: 'white', size: '3rem'}}>
-                            <S.SlideButton onClick={()=> prevIndex()}>
-                                <GrPrevious />
-                            </S.SlideButton>
-                            <S.SlideButton onClick={()=>nextIndex()}>
-                                <GrNext />
-                            </S.SlideButton>  
-                            </IconContext.Provider>  
-                        </S.ButtonsBox> */}
                     </S.SlideContent>
                 ))}
         </S.SlideContainer>
