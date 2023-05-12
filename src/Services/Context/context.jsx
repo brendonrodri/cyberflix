@@ -1,8 +1,9 @@
-import React,{ createContext, useState } from "react"
+import React, { createContext, useState } from "react"
 export const Context = createContext()
-export default function ContextProvider({children}) {
-    const [apidata,setApiData] = useState([])
+export default function ContextProvider({ children }) {
+    const [apidata, setApiData] = useState([])
     const [apiSeriesData, setApiSeriesData] = useState([])
+    const [globalData, setGlobalData] = useState([])
     const [slideIndex, setSlideIndex] = useState({
         indexOne: 0,
         indexTwo: 1
@@ -16,36 +17,38 @@ export default function ContextProvider({children}) {
         lang: undefined,
         year: undefined,
         component: undefined
-    
-      })
+
+    })
     const [modalActive, setModalActive] = useState({
         modalFilms: undefined,
         modalSeries: undefined,
         isOn: true
     })
-    const [ input,
+    const [input,
         setInput] = useState()
-    const [dataFiltered, setDatFiltered] = useState() 
-    const [favList, setFavList] = useState([])   
-    return(
+    const [dataFiltered, setDatFiltered] = useState()
+    const [favList, setFavList] = useState([])
+    return (
         <Context.Provider value={{
-            apidata, 
+            apidata,
             setApiData,
-            apiSeriesData, 
+            apiSeriesData,
             setApiSeriesData,
-            slideIndex, 
-            setSlideIndex, 
-            modalActive, 
+            slideIndex,
+            setSlideIndex,
+            modalActive,
             setModalActive,
             modalItem,
             setModalItem,
             input,
             setInput,
-            dataFiltered, 
+            dataFiltered,
             setDatFiltered,
-            favList, 
-            setFavList
-            }}>
+            favList,
+            setFavList,
+            globalData,
+            setGlobalData
+        }}>
             {children}
         </Context.Provider>
     )

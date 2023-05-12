@@ -3,13 +3,8 @@ import { useState } from "react"
 import { Context } from "../../Services/Context/context"
 import * as S from "./styles"
 export const FilterComponent = () => {
-    const [msg, setMsg] = useState('Carregando...')
+    const [msg] = useState('Carregando...')
     const { dataFiltered, input } = useContext(Context)
-    const loadingComponent = () => {
-        setTimeout(() => {
-            setMsg('Sem ddsds   resultados')
-        }, 3000)
-    }
     const FilterApi = () => {
         if (!input) {
             return
@@ -17,7 +12,7 @@ export const FilterComponent = () => {
             return (
                 <>
                     <S.FilterContainer>
-                        {dataFiltered.length === 0 ? <h2>{msg}</h2> :
+                        {dataFiltered.length === 0 ? <S.FilterContainerTitle>{msg}</S.FilterContainerTitle> :
                             dataFiltered.map((item) => (
                                 <S.CardBox>
                                     <S.CardTitle>{item.title}</S.CardTitle>
@@ -29,7 +24,6 @@ export const FilterComponent = () => {
             )
         }
     }
-   loadingComponent()
     return (
         <>
             <FilterApi />

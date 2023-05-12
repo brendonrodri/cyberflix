@@ -4,7 +4,6 @@ import { Context } from "../../Services/Context/context"
 import * as S from "./style"
 export default function FilmsComponent() {
   const { apidata, setModalItem, setModalActive } = useContext(Context)
-  console.log(apidata)
   const settings = {
     className: "center",
     centerMode: false,
@@ -17,34 +16,34 @@ export default function FilmsComponent() {
   return (
     <S.FilmsContainer>
       <S.ComponentTitle > Filmes Populares </S.ComponentTitle>
-        <Slider {...settings} style={{ width: '95%', margin: '0 auto', cursor: 'grab' }}>
-          {apidata.map((data) => (
-            <div key={data.id}>
-                <S.FilmImg
-                  src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`}
-                  alt={data.title}
-                  onClick={() => {
-                    setModalActive({
-                      modalFilms: true,
-                      modalSeries: false,
-                      isOn: false
-                    })
-                    setModalItem({
-                      id: data.id,
-                      title: data.title,
-                      description: data.overview,
-                      img: `https://image.tmdb.org/t/p/w200/${data.poster_path}`,
-                      popularity: data.popularity,
-                      lang: data.original_language,
-                      year: data.release_date,
-                      component: 'FilmsComponent'
-                    })
-                    window.location.href='#modal';
-                  }}
-                />
-            </div>
-          ))}
-        </Slider>
+      <Slider {...settings} style={{ width: '95%', margin: '0 auto', cursor: 'grab' }}>
+        {apidata.map((data) => (
+          <div key={data.id}>
+            <S.FilmImg
+              src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`}
+              alt={data.title}
+              onClick={() => {
+                setModalActive({
+                  modalFilms: true,
+                  modalSeries: false,
+                  isOn: false
+                })
+                setModalItem({
+                  id: data.id,
+                  title: data.title,
+                  description: data.overview,
+                  img: `https://image.tmdb.org/t/p/w200/${data.poster_path}`,
+                  popularity: data.popularity,
+                  lang: data.original_language,
+                  year: data.release_date,
+                  component: 'FilmsComponent'
+                })
+                window.location.href = '#modal';
+              }}
+            />
+          </div>
+        ))}
+      </Slider>
     </S.FilmsContainer>
   );
 }

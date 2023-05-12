@@ -22,6 +22,12 @@ export const FilterContainer = styled.section`
    }
   
 `
+export const FilterContainerTitle = styled.h2`
+    margin: 2rem;
+    font-size: 2rem;
+    color: #f2f2f2f2;
+`
+
 export const CardBox = styled.div`
     width: 22vw;
     display: flex;
