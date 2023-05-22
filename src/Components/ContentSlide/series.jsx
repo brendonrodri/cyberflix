@@ -15,16 +15,16 @@ export default function SeriesComponent() {
   };
   return (
     <S.FilmsContainer>
-      
-      <S.ComponentTitle > Séries Populares </S.ComponentTitle> 
+
+      <S.ComponentTitle > Séries Populares </S.ComponentTitle>
       <Slider {...settings} style={{ width: '95%', margin: '0 auto', cursor: 'grab' }}>
         {apiSeriesData.map((data) => (
-          <div key={data.id}> 
+          <div key={data.id}>
             <S.FilmImg
               src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`}
               alt={data.title}
               onClick={() => {
-                 setModalActive({
+                setModalActive({
                   modalFilms: false,
                   modalSeries: true
                 })
@@ -32,12 +32,13 @@ export default function SeriesComponent() {
                   id: data.id,
                   title: data.name,
                   description: data.overview,
-                  img:`https://image.tmdb.org/t/p/w200/${data.poster_path}`,
+                  img: `https://image.tmdb.org/t/p/w200/${data.poster_path}`,
+                  background: `https://image.tmdb.org/t/p/w500/${data.backdrop_path}`,
                   popularity: data.popularity,
                   lang: data.original_language,
                   year: data.release_date,
                 })
-                window.location.href='#modal';
+                window.location.href = '#modal';
               }}
             />
           </div>

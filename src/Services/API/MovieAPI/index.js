@@ -3,21 +3,20 @@ import axios from "axios";
 import { Context } from "../../Context/context";
 
 export default function GetApi() {
-    const { apidata, apiSeriesData, setGlobalData } = useContext(Context)
-    const data = apidata.concat(apiSeriesData)
-    setGlobalData(data)
     return (
         GetApiFilms(),
         GetApiSeries()
     )
 }
 const GetApiFilms = () => {
-    const { setApiData } = useContext(Context)
+    const { setApiData, apiSeriesData, setGlobalData } = useContext(Context)
     useEffect(() => {
         axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=2785fd17cabc7d3339d5a4671f60e34f&language=pt-BR&page=1`).then((response) => {
+            const data = response.data.results.concat(apiSeriesData)
+            setGlobalData(data)
             setApiData(response.data.results)
         })
-    })
+    }, [])
 }
 const GetApiSeries = () => {
     const { setApiSeriesData } = useContext(Context)
@@ -25,5 +24,5 @@ const GetApiSeries = () => {
         axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=2785fd17cabc7d3339d5a4671f60e34f&language=pt-BR&page=1`).then((response) => {
             setApiSeriesData(response.data.results)
         })
-    })
+    }, [])
 }

@@ -1,8 +1,12 @@
 import styled from "styled-components"
-export const  ModalContainer= styled.section`
+export const ModalContainer = styled.section`
     width: 97%;
     margin: 0 auto;
     background-color: rgba(250, 250, 250, .1);
+    background-image: url(${props => props.back});
+    background-size: 40vh;
+    background-position: cover;
+    background-repeat: no-repeat;
     transition: 2000ms;
     display: flex;
     flex-direction: column;

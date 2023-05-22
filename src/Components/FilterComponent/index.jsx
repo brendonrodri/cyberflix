@@ -11,7 +11,7 @@ export const FilterComponent = () => {
         } else {
             return (
                 <>
-                    <S.FilterContainer>
+                    <S.FilterContainer >
                         {dataFiltered.length === 0 ? <S.FilterContainerTitle>{msg}</S.FilterContainerTitle> :
                             dataFiltered.map((item) => (
                                 <S.CardBox>

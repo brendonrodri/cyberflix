@@ -28,9 +28,24 @@ export const CardBox = styled.div`
     margin: 1rem 0;
     padding-top: 1rem;
     background-color: rgba(25, 23, 65, 0.9);
-    box-shadow: rgba(225, 232, 8, 0.86) 0px 1px 6px 2px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 8px 3px;
+    border-radius: 4px;
+   /*  animation: ${(props) => props.animationCard} slidecard 1s ease-in-out 0s 1 normal none;
+        :hover{
+            transform: scale(1.1);
+        }
+        @keyframes slidecard {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100px);
+            }
+  
+} */
 `
 export const CardTitle = styled.h3`
+   
     color: rgba(250, 240, 250, 0.9);
     text-align: center; 
 `

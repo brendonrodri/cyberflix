@@ -4,6 +4,7 @@ export default function ContextProvider({ children }) {
     const [apidata, setApiData] = useState([])
     const [apiSeriesData, setApiSeriesData] = useState([])
     const [globalData, setGlobalData] = useState([])
+    console.log(globalData)
     const [slideIndex, setSlideIndex] = useState({
         indexOne: 0,
         indexTwo: 1
@@ -13,12 +14,14 @@ export default function ContextProvider({ children }) {
         title: undefined,
         description: undefined,
         img: undefined,
+        background: undefined,
         popularity: undefined,
         lang: undefined,
         year: undefined,
         component: undefined
 
     })
+    console.log(modalItem.background)
     const [modalActive, setModalActive] = useState({
         modalFilms: undefined,
         modalSeries: undefined,

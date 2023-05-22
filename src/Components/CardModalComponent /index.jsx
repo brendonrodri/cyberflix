@@ -1,4 +1,4 @@
-import React, {useContext} from "react"
+import React, { useContext } from "react"
 import "./buttonStyle.css"
 import { MdPlaylistAdd, MdClose } from "react-icons/md"
 import { BiLike } from "react-icons/bi"
@@ -7,51 +7,49 @@ import { Context } from "../../Services/Context/context"
 import * as S from "./style"
 import FilmsComponent from "../ContentSlide/filmes"
 import SeriesComponent from "../ContentSlide/series"
-export function CardModalComponent(id, title, desc, img, pop, year, lang) {
-    const { apidata, setModalActive, modalActive, favList, setFavList } = useContext(Context)
-
-    const addToFavList = () =>{
-        let filtered = apidata.filter((item)=>{
+export function CardModalComponent(id, title, desc, img, background, pop, year, lang) {
+    const { globalData, setModalActive, modalActive, modalItem, favList, setFavList } = useContext(Context)
+    const addToFavList = () => {
+        let filtered = globalData.filter((item) => {
             return item.id === id
         })
-        
-        setFavList(favList.concat(filtered))
-        console.log(favList)
+        setFavList({ ...favList, filtered })
     }
-
     return (
-        <S.ModalContainer id="modal">
-            <S.CloseButton onClick={() => setModalActive({ modalFilms: false, modalSeries: false, isOn: true })}>
-                <IconContext.Provider value={{size: '2.4rem'}}>
-                    <MdClose />
-                </IconContext.Provider>
-            </S.CloseButton>
-            <S.FilmBox>
-                <S.ModalImg src={img} alt={title} />
-                <S.FilmInfos>
-                    <S.FilmModalTitle>{title}</S.FilmModalTitle>
-                    <S.FilmDesc>{desc}</S.FilmDesc>
-                    <S.FilmList>
-                        <li>Popularidade: {pop}</li>
-                        <li>Lançamento: {year}</li>
-                        <li>Idioma: {lang}</li>
-                    </S.FilmList>
-                    <S.ButtonContainer>
-                        <S.ModalButton onClick={()=> addToFavList()}>
-                            <IconContext.Provider value={{ color: '#000', size: '1.5rem', className: "buttonIcon" }}>
-                                <MdPlaylistAdd />
-                                Minha lista
-                            </IconContext.Provider>
-                        </S.ModalButton>
-                        <S.ModalButton>
-                            <IconContext.Provider value={{ color: '#000', size: '1.3rem', className: "buttonIcon" }}>
-                                <BiLike />
-                                Favoritar
-                            </IconContext.Provider>
-                        </S.ModalButton>
-                    </S.ButtonContainer>
-                </S.FilmInfos>
-            </S.FilmBox>
+        <S.ModalContainer id="modal" /* back={background} */ /* style={{ backgroundImage: `url(${modalItem.background})`}} */>
+            <div style={{ backgroundImage: `url(${background})`, backgroundSize: '100%' }}>
+                <S.CloseButton onClick={() => setModalActive({ modalFilms: false, modalSeries: false, isOn: true })}>
+                    <IconContext.Provider value={{ size: '2.4rem' }}>
+                        <MdClose />
+                    </IconContext.Provider>
+                </S.CloseButton>
+                <S.FilmBox>
+                    <S.ModalImg src={img} alt={title} />
+                    <S.FilmInfos>
+                        <S.FilmModalTitle>{title}</S.FilmModalTitle>
+                        <S.FilmDesc>{desc}</S.FilmDesc>
+                        <S.FilmList>
+                            <li>Popularidade: {pop}</li>
+                            <li>Lançamento: {year}</li>
+                            <li>Idioma: {lang}</li>
+                        </S.FilmList>
+                        <S.ButtonContainer>
+                            <S.ModalButton onClick={() => addToFavList()}>
+                                <IconContext.Provider value={{ color: '#000', size: '1.5rem', className: "buttonIcon" }}>
+                                    <MdPlaylistAdd />
+                                    Minha lista
+                                </IconContext.Provider>
+                            </S.ModalButton>
+                            <S.ModalButton>
+                                <IconContext.Provider value={{ color: '#000', size: '1.3rem', className: "buttonIcon" }}>
+                                    <BiLike />
+                                    Favoritar
+                                </IconContext.Provider>
+                            </S.ModalButton>
+                        </S.ButtonContainer>
+                    </S.FilmInfos>
+                </S.FilmBox>
+            </div>
             {modalActive.modalFilms === true ? <FilmsComponent /> : ''}
             {modalActive.modalSeries === true ? <SeriesComponent /> : ''}
         </S.ModalContainer>
@@ -67,6 +65,7 @@ export default function ModalComponent() {
                     modalItem.title,
                     modalItem.description,
                     modalItem.img,
+                    modalItem.background,
                     modalItem.popularity,
                     modalItem.lang,
                     modalItem.year,
@@ -79,6 +78,7 @@ export default function ModalComponent() {
                     modalItem.title,
                     modalItem.description,
                     modalItem.img,
+                    modalItem.background,
                     modalItem.popularity,
                     modalItem.lang,
                     modalItem.year,

@@ -1,5 +1,6 @@
 import React from "react"
 import { Routes, Route, BrowserRouter } from "react-router-dom"
+import { CardModalComponent } from "./Components/CardModalComponent "
 import { FilterComponent } from "./Components/FilterComponent"
 import HeaderComponent from "./Components/Header"
 import MainComponent from "./Components/Main"
@@ -17,6 +18,7 @@ export default function App() {
             <BrowserRouter>
                 <HeaderComponent />
                 <FilterComponent />
+
                 <Routes>
                     <Route path="/" element={<MainComponent />} />
                     <Route path="/Populares" element={<FilmsPagesComponent />} />
