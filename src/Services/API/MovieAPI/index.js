@@ -1,12 +1,27 @@
 import { useContext, useEffect } from "react"
 import axios from "axios";
 import { Context } from "../../Context/context";
-
 export default function GetApi() {
     return (
         GetApiFilms(),
-        GetApiSeries()
+        GetApiSeries(),
+        GetApiFilter()
     )
+}
+const GetApiFilter = () => {
+    const { setApiFilter, input } = useContext(Context)
+    const options = {
+        method: 'GET',
+        url: 'https://api.themoviedb.org/3/search/movie',
+        params: { query: input, include_adult: 'false', language: 'pt-BR', page: '1' },
+        headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3NTZmMTdlN2QyZTNkZWU3ZWRlZTk0MzU4NzA2NmIxZSIsInN1YiI6IjY0NTI5ZmU3YzA0NDI5MDEwMTYxNTQwMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vO74LSA42A2gY0T1q7cwqteYusLYQ_ollb1ivDHUEjI'
+        }
+    };
+    useEffect(() => {
+        axios.request(options).then(response => setApiFilter(response.data.results))
+    }, [input])
 }
 const GetApiFilms = () => {
     const { setApiData, apiSeriesData, setGlobalData } = useContext(Context)

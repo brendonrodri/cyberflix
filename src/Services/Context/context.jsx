@@ -30,6 +30,7 @@ export default function ContextProvider({ children }) {
     const [input,
         setInput] = useState()
     const [dataFiltered, setDatFiltered] = useState()
+    const [apiFilter, setApiFilter] = useState([])
     const [favList, setFavList] = useState([])
     return (
         <Context.Provider value={{
@@ -47,6 +48,8 @@ export default function ContextProvider({ children }) {
             setInput,
             dataFiltered,
             setDatFiltered,
+            apiFilter,
+            setApiFilter,
             favList,
             setFavList,
             globalData,
