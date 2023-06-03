@@ -33,7 +33,7 @@ export default function FilmsComponent() {
                   title: data.title,
                   description: data.overview,
                   img: `https://image.tmdb.org/t/p/w500/${data.poster_path}`,
-                  background: `https://image.tmdb.org/t/p/w500/${data.backdrop_path}`,
+                  background: `https://image.tmdb.org/t/p/original/${data.backdrop_path}`,
                   popularity: data.popularity,
                   lang: data.original_language,
                   year: data.release_date,

@@ -20,15 +20,16 @@ const GetApiFilter = () => {
         }
     };
     useEffect(() => {
-        axios.request(options).then(response => setApiFilter(response.data.results))
-    }, [input])
+        axios
+            .request(options)
+            .then(response => setApiFilter(response.data.results))
+            .catch(error => alert(error));
+    }, [input, setApiFilter])
 }
 const GetApiFilms = () => {
-    const { setApiData, apiSeriesData, setGlobalData } = useContext(Context)
+    const { setApiData } = useContext(Context)
     useEffect(() => {
         axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=2785fd17cabc7d3339d5a4671f60e34f&language=pt-BR&page=1`).then((response) => {
-            const data = response.data.results.concat(apiSeriesData)
-            setGlobalData(data)
             setApiData(response.data.results)
         })
     }, [])

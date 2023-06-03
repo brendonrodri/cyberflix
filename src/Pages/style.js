@@ -4,7 +4,7 @@ export const PageContainer = styled.section`
    width: 95%;
    flex-wrap: wrap;
    margin: 2rem auto;
-   justify-content: space-around;
+   justify-content: space-between;
    animation: slide-in-elliptic-left-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     @keyframes slide-in-elliptic-left-fwd {
     0% {
@@ -20,35 +20,52 @@ export const PageContainer = styled.section`
     }
 `
 export const CardBox = styled.div`
-    width: 22vw;
+    width: ${props => props.width} ;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     margin: 1rem 0;
-    padding-top: 1rem;
     background-color: rgba(25, 23, 65, 0.9);
     box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 8px 3px;
     border-radius: 4px;
-   /*  animation: ${(props) => props.animationCard} slidecard 1s ease-in-out 0s 1 normal none;
-        :hover{
-            transform: scale(1.1);
-        }
-        @keyframes slidecard {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(-100px);
-            }
-  
-} */
+    cursor: pointer;
 `
 export const CardTitle = styled.h3`
-   
     color: rgba(250, 240, 250, 0.9);
-    text-align: center; 
+    font-size: 1rem;
 `
 export const CardImg = styled.img`
-    width: 16vw;
+    width: ${props => props.width};
 `
+
+export const CardModal = styled.div`
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+export const ModalBoxes = styled.div`
+    background: rgba(255, 255, 255, 0.4);
+    width: ${props => props.width};
+    display: ${props => props.display};
+    justify-content: space-evenly;
+    align-items: center;
+    padding: .8rem;
+`
+export const ModalButtons = styled.button`
+    width: 3vw;
+    background-color: #7e4aaf;
+    border: none;
+    padding: 3px;
+    border-radius: 3px;
+    
+`
+export const ModalFooter = styled.footer`
+    display: flex;
+    width: 95%;
+`
+

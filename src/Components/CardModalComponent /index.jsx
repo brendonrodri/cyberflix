@@ -8,13 +8,8 @@ import * as S from "./style"
 import FilmsComponent from "../ContentSlide/filmes"
 import SeriesComponent from "../ContentSlide/series"
 export function CardModalComponent(id, title, desc, img, background, pop, year, lang) {
-    const { globalData, setModalActive, modalActive, modalItem, favList, setFavList } = useContext(Context)
-    const addToFavList = () => {
-        let filtered = globalData.filter((item) => {
-            return item.id === id
-        })
-        setFavList({ ...favList, filtered })
-    }
+    const { setModalActive, modalActive, apidata, apiSeriesData, favList, setFavList } = useContext(Context)
+
     return (
         <S.ModalContainer id="modal" /* back={background} */ /* style={{ backgroundImage: `url(${modalItem.background})`}} */>
             <div style={{ backgroundImage: `url(${background})`, backgroundSize: '100%' }}>
@@ -34,7 +29,7 @@ export function CardModalComponent(id, title, desc, img, background, pop, year, 
                             <li>Idioma: {lang}</li>
                         </S.FilmList>
                         <S.ButtonContainer>
-                            <S.ModalButton onClick={() => addToFavList()}>
+                            <S.ModalButton style={{ display: 'flex', alignItems: 'center' }} >
                                 <IconContext.Provider value={{ color: '#000', size: '1.5rem', className: "buttonIcon" }}>
                                     <MdPlaylistAdd />
                                     Minha lista

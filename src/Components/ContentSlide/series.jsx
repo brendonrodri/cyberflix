@@ -33,7 +33,7 @@ export default function SeriesComponent() {
                   title: data.name,
                   description: data.overview,
                   img: `https://image.tmdb.org/t/p/w200/${data.poster_path}`,
-                  background: `https://image.tmdb.org/t/p/w500/${data.backdrop_path}`,
+                  background: `https://image.tmdb.org/t/p/original/${data.backdrop_path}`,
                   popularity: data.popularity,
                   lang: data.original_language,
                   year: data.release_date,

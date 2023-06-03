@@ -1,15 +1,14 @@
 import styled from "styled-components"
 
 export const FilmsContainer = styled.section`
-    width: 97%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 2rem auto;
+    margin: 1rem auto;
     padding: 1rem 0;
-    background-color: rgba(25, 23, 65, 0.9);
     scroll-behavior: smooth;
 `
-export const FilmsContainterTitle= styled.h2`
+export const FilmsContainterTitle = styled.h2`
     font-size: 1rem;
 
 `
@@ -50,6 +49,6 @@ export const ComponentTitle = styled.h2`
         margin-left: 2rem;
         margin-bottom: 1rem;
 `
-export const  TitleContainer = styled.section`
+export const TitleContainer = styled.section`
 
 `

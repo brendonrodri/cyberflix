@@ -8,7 +8,7 @@ export const SlideContainer = styled.section`
     background-color: transparent;
 `
 export const SlideContent = styled.article`
-    width: 100%;
+    width: 98%;
     height: 100%;
     background-color: transparent;
     display: flex;
