@@ -1,21 +1,20 @@
 import React, { useContext } from "react"
-import axios from "axios"
 /* import {GrNext, GrPrevious} from "react-icons/gr"
 import { IconContext } from "react-icons" */
 import { Context } from "../../Services/Context/context"
 import * as S from "./style"
-export default function SlideComponent() {
+export default function BannerComponnet(props) {
 
-    const { apidata } = useContext(Context)
+    const { upcommingFilms } = useContext(Context)
 
-    let dataComponent = apidata.slice(3, 4)
+    let dataComponent = upcommingFilms.slice(3, 4)
 
     return (
         <S.SlideContainer>
-            {dataComponent.map((item) => (
-                <S.SlideContent >
+            <S.SlideContent >
+                {dataComponent.map((item) => (
                     <S.MovieCard style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${item.backdrop_path})` }}>
-                        <S.SlideImage src={`https://image.tmdb.org/t/p/original/${item.poster_path}`} alt={item.title} />
+                        <S.SlideImage src={`https://image.tmdb.org/t/p/original${item.poster_path}`} alt={item.title} />
                         <S.BoxInfos>
                             <S.SlideTitle>{item.title}</S.SlideTitle>
                             <S.SlideOverView>{item.overview}</S.SlideOverView>
@@ -27,8 +26,9 @@ export default function SlideComponent() {
                             </S.SlideListInfos>
                         </S.BoxInfos>
                     </S.MovieCard>
-                </S.SlideContent>
-            ))}
+                ))}
+
+            </S.SlideContent>
         </S.SlideContainer>
     )
 }

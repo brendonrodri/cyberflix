@@ -2,9 +2,11 @@ import React, { createContext, useState } from "react"
 export const Context = createContext()
 export default function ContextProvider({ children }) {
     const [apidata, setApiData] = useState([])
+    const [topRated, setTopRated] = useState([])
     const [apiSeriesData, setApiSeriesData] = useState([])
+    const [topRatedSeries, setTopRatedSeries] = useState([])
+    const [upcommingFilms, setUpcommingFilms] = useState([])
     const [globalData, setGlobalData] = useState([])
-    console.log(globalData)
     const [slideIndex, setSlideIndex] = useState({
         indexOne: 0,
         indexTwo: 1
@@ -21,7 +23,6 @@ export default function ContextProvider({ children }) {
         component: undefined
 
     })
-    console.log(modalItem.background)
     const [modalActive, setModalActive] = useState({
         modalFilms: undefined,
         modalSeries: undefined,
@@ -53,7 +54,12 @@ export default function ContextProvider({ children }) {
             favList,
             setFavList,
             globalData,
-            setGlobalData
+            setGlobalData,
+            topRated,
+            setTopRated,
+            upcommingFilms,
+            setUpcommingFilms,
+            topRatedSeries, setTopRatedSeries
         }}>
             {children}
         </Context.Provider>

@@ -50,7 +50,9 @@ export const CardModal = styled.div`
 `
 export const ModalBoxes = styled.div`
     background: rgba(255, 255, 255, 0.4);
+
     width: ${props => props.width};
+    height: ${props => props.height};
     display: ${props => props.display};
     justify-content: space-evenly;
     align-items: center;

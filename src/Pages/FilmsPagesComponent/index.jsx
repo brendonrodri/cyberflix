@@ -10,6 +10,7 @@ import * as S from "../style"
 export default function FilmsPagesComponent() {
     const [modal, setModal] = useState(false)
     const { apidata } = React.useContext(Context)
+    console.log(apidata)
     const showInfos = (id) => {
         setModal(id)
     }

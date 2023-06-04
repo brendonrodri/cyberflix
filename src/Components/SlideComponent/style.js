@@ -42,7 +42,7 @@ export const BoxInfos = styled.div`
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    background-color: rgba(55,43,95, .9);
+    background-color: rgba(55,43,95, .3);
     
 
 `
